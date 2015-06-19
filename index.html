@@ -3,23 +3,23 @@
 
   <head>
     <script data-require="handlebars.js@*" data-semver="1.3.0" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
-    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-
+    <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
 
   <body>
     <script id="entry-template" type="text/x-handlebars-template">
+      {{#each cards}}
         <div class="entry">
-          <h1>{{name}}</h1>
+          <h2>{{name}}</h2>
           <div class="body">
-            {{body}}<br>
-          <img src="{{avatar_url}}">
+            {{login}}, <a href="{{blog}}">{{blog}}</a>
           </div>
-          <a href="{{blog}}">{{blog}}</a><br>
         </div>
-      </script>
+      {{/each}}
+    </script>    
+    
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 
 </html>
