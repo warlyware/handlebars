@@ -4,25 +4,44 @@
   <head>
     <script data-require="handlebars.js@*" data-semver="1.3.0" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
     <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <script id="entry-template" type="text/x-handlebars-template">
-      <h2>{{appName}}</h2>
-      <h3>{{todos.length}} things left to do</h3>
+      <h1 class="text-center">{{appName}}</h1>
+      <h3 class="text-center">{{todos.length}} things left to do</h3>
+      <form id="addTaskForm" class="text-center">
+        <input type="text" id="newTaskName">
+        <select id="newTaskTag">
+          <option value="important">important</option>
+          <option value="semi-important">semi-important</option>
+          <option value="unimportant">unimportant</option>
+        </select><br>
+        <button type="submit" class="btn btn-success">Add Task</button>
+      </form>
       
-      <ul>
-      
+      <p class="text-center"><br>
+        <input type="checkbox" id="markAll"></input>mark all done
+      </p>
+
+      <ul class="center-block">
       {{#each todos}}
-        <li class="done-{{done}}">
+        <li class="done-{{done}} {{tag}}">
         <input type="checkbox" {{#if done}} checked {{/if}} data-index="{{@index}}">
         {{action}}
         </li>
       {{/each}}
       </ul>
       
+      <button id="clearDone" class="center-block btn btn-warning">clear done</button>
+
+
     </script>
+
     <div class="container">
       
     </div>

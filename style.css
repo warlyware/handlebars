@@ -1,4 +1,67 @@
 .done-true {
-  color: #bbb;
+  color: black;
   text-decoration: line-through;
+}
+
+.cleared-true {
+  visibility: hidden;
+}
+
+.important {
+  background-color: red;
+}
+
+.unimportant {
+  background-color: skyblue;
+}
+
+.semi-important {
+  background-color: gold;
+}
+
+#addTaskForm {
+  padding-top: 10px;
+}
+
+#clearDone {
+  margin-top: 10px;
+}
+
+#newTaskName {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+p {
+  color: white;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+input {
+  padding: 10px;
+}
+
+h1, h3 {
+  color: white;
+}
+
+body {
+  background-color: black; 
+}
+
+li {
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+ul {
+  padding-left: 0px;
+  margin-top: 20px;
+  width: 200px;
+  list-style: none;
 }
