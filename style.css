@@ -3,6 +3,10 @@
   text-decoration: line-through;
 }
 
+.q1 {
+  color: red;
+}
+
 .cleared-true {
   visibility: hidden;
 }

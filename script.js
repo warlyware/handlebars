@@ -1,7 +1,7 @@
 var TODOS = [
   { action: "Do this first", done: false, tag: 'important', cleared: false },
   { action: "Learn HB", done: true, tag: 'semi-important', cleared: false },
-  { action: "Learn Angular", done: false, tag: 'unimportant', cleared: false }
+  { action: "Learn Angular", done: false, tag: 'unimportant', cleared: false, funky: true }
 ];
 
 var source   = $("#entry-template").html();
@@ -12,7 +12,14 @@ function render() {
   $(".container").html(html);
 }
 
+Handlebars.registerHelper('findFunky', function(todo) {
+  var reverseAction = todo.action.split('').reverse().join('');
+  // console.log(reverseAction);
+  return todo.funky ? todo.action = todo.action : todo.action = reverseAction ;
+});
+
 render();
+
 
 $('.container')
   .on('click', ':checkbox', function() {
